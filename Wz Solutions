@@ -1,0 +1,100 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/memejames/elerium-v2-ui-library//main/Library", true))()
+
+local window = library:AddWindow("Wz Solutions", {
+	main_color = Color3.fromRGB(41, 74, 122), -- Color
+	min_size = Vector2.new(250, 346), -- Size of the gui
+	can_resize = false, -- true or false
+})
+
+local features = window:AddTab("Main") -- Name of tab
+features:Show() -- shows the tab
+
+features:AddButton("CamLock Key.Q",function()
+    getgenv().Camlock_Settings = {
+        Prediction = 0.147,
+        AimPart = "HumanoidRootPart",
+        Key = "q",
+        AutoPrediction = false,
+        Notification = true,
+        Button = true,
+        AntiGroundShots = false,
+        UnderGroundResolver = false,
+
+        -- DO NOT TOUCH THIS OR THE CAMLOCK WILL NOT WORK --
+        Version = "2.5.1",
+        Credits = "space_0999",
+        DiscordServer = "discord.gg/SKhamGzTdn"
+    }
+    
+    
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Scripts/Cam%20Lock.lua'))()
+end)
+
+features:AddButton("Silent Aim",function()
+    --────────────────────────────────────────────────────────────────────────────────────
+--─██████████████─████████████████───██████████─██████──────────██████─██████████████─
+--─██░░░░░░░░░░██─██░░░░░░░░░░░░██───██░░░░░░██─██░░██████████████░░██─██░░░░░░░░░░██─
+--─██░░██████░░██─██░░████████░░██───████░░████─██░░░░░░░░░░░░░░░░░░██─██░░██████████─
+--─██░░██──██░░██─██░░██────██░░██─────██░░██───██░░██████░░██████░░██─██░░██─────────
+--─██░░██████░░██─██░░████████░░██─────██░░██───██░░██──██░░██──██░░██─██░░██████████─
+--─██░░░░░░░░░░██─██░░░░░░░░░░░░██─────██░░██───██░░██──██░░██──██░░██─██░░░░░░░░░░██─
+--─██░░██████████─██░░██████░░████─────██░░██───██░░██──██████──██░░██─██░░██████████─
+--─██░░██─────────██░░██──██░░██───────██░░██───██░░██──────────██░░██─██░░██─────────
+--─██░░██─────────██░░██──██░░██████─████░░████─██░░██──────────██░░██─██░░██████████─
+--──────────────────────────────────────────────────────────────────────
+loadstring(game:HttpGet("https://raw.githubusercontent.com/strongprime/source/main/source", true))()
+
+DaHoodSettings.Prediction = 0.148357
+
+getgenv().Aiming.TargetPart = {"Head", "HumanoidRootPart", "LowerTorso"}
+
+getgenv().Aiming.HitChance = 70
+
+getgenv().Aiming.ShowFOV = false
+
+getgenv().Aiming.FOV = 6.7
+-- remove this if u dont wanna get flung
+local RunService = game:GetService("RunService")
+end)
+
+local switch = features:AddSwitch("Hitbox Espandet Key.T", function(bool)
+    -- VARIABLES
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+-- CONFIGURE 
+
+bind = "" 
+bind2 = "t"
+
+-- MAIN SRC
+
+mouse.KeyDown:connect(function(key)
+if key == bind then
+player.Character.HumanoidRootPart.CFrame = CFrame.new(1254.09656, 137.906067, -172.128204)
+end
+end)
+
+mouse.KeyDown:connect(function(key2)
+if key2 == bind2 then
+_G.HeadSize = 20
+_G.Disabled = true
+
+
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end
+end)
+end)
+switch:Set(true)
